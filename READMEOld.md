@@ -1,5 +1,18 @@
 # Foreningen for Dyrevelfaerd - opgave
 
+
+Christian Johansen - WUHF03
+
+Repo: Terminsprove-Johansen512
+
+Stack:
+
+React
+Emotion
+Reach/Router
+
+
+
 Ud over denne opgave er der udleveret et separat assignment som indeholder det api du skal hente data fra. Følg vejledningen i readme filen for api'et for at installere og køre api'et.
 
 Du skal ikke lave en aflevering på api-assignment, men udelukkende på dette opgave assignment. 
