@@ -1,6 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from "./Components/Home";
+import Omos from "./Components/Omos";
+import Frivillig from "./Components/Frivillig";
+import Dyrinod from "./Components/Dyrinod";
+import Adopter from "./Components/Adopter";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import DataContextProvider from './Contexts/DataContext';
@@ -13,9 +16,13 @@ function App() {
     <DataContextProvider>
    <>
    <Header />
-   <router>
-      <Home />
-      </router>
+   <Router>
+      <Home path="/" />
+      <Omos path="/Omos" />
+      <Frivillig path="/Frivillig" />
+      <Dyrinod path="/Dyrinod" />
+      <Adopter path="/Adopter" />
+      </Router>
       <Footer />
     </>
 
