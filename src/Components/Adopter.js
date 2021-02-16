@@ -4,11 +4,25 @@ import { dataContext } from "../Contexts/DataContext";
 
 const Adopter = () => {
 
+
+  const headsectionstyle=css`
+  
+  display:flex;
+  flex-direction:column;
+  margin: 0 20%;
+
+  
+  
+  
+  `;
+
+
+
   const adoptstyle=css`
   display: flex;
   flex-direction:row;
   flex-wrap:wrap;
-  margin:20%;
+  margin: 0  20%;
 
   
   
@@ -45,7 +59,7 @@ flex-direction:column;
     return ( 
 
       <div >
-<section>
+<section css={headsectionstyle}>
         <h2>Adoptér et dyr</h2>
 
         <p>gnyf gnyf gnyf</p>
