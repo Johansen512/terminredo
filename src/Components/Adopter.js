@@ -41,6 +41,7 @@ const articleblockstyle=css`
 
 display:flex;
 flex-direction: column;
+margin: 0  20%;
 
 
 
@@ -56,20 +57,28 @@ flex-direction:column;
 
 
 `;
+
+
+const textstyle=css`
+margin:0;
+
+
+`;
     return ( 
 
       <div >
 <section css={headsectionstyle}>
-        <h2>Adoptér et dyr</h2>
+        <h2 css={textstyle}>Adoptér et dyr</h2>
 
-        <p>gnyf gnyf gnyf</p>
+        <p css={textstyle}>gnyf gnyf gnyf</p>
 
         </section>
 
 <section css={articleblockstyle}>
 
-  <h3>Dyr hos os</h3>
-  <p>Antal dyr </p>
+  <h3 css={textstyle}>Dyr hos os</h3>
+  <p css={textstyle}>Antal dyr </p>
+  </section>
 
   <section css={adoptstyle}>
 
@@ -170,7 +179,7 @@ flex-direction:column;
   </section>
   </article>
   </section>
-</section>
+
 </div>
 
 
