@@ -1,15 +1,18 @@
 /**@jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { dataContext } from "../Contexts/DataContext";
+import '../App.css';
 
 const Footer = () => {
 
 
     const footerstyle=css`
-    background-color: lightsteelblue;
+    background-color: #e2edff;
     display: flex;
     flex-direction: row;
-       
+    justify-content: space-evenly;
+    align-items:flex-end;
+    padding:0.5rem;
 
 
 
@@ -21,19 +24,19 @@ const Footer = () => {
     align-items:flex-start;
     justify-content: flex-start;
     margin: 0.1rem;
-
+    
    
 
     
     `;
     
-    const liststyle=css`
+    /*const liststyle=css`
         list-style: none;
         border: black solid 4px;
        
 
 
-        `;
+        `;*/
     
     
     
@@ -50,20 +53,21 @@ const Footer = () => {
         <p>Husk at du kan få fradag for donationer på op til 16.600</p>
          </div>
 
+         <div>© 2020 - Foreningen for Dyrevelfærd</div>
 
-    <div css={footersubsstyle}>
+    <div css={footersubsstyle} >
         <h2>PARTNERE</h2>
-        <ul css={liststyle}>
-        <li><a href="https://anima.dk/">Anima</a></li>
-        <li><a href="https://www.worldanimalprotection.dk/">World Animal Protection</a></li>
-        <li><a href="https://www.foedevarestyrelsen.dk/">Fødevarestyrelsen</a></li>
-        <li><a href="https://faktalink.dk/">Faktalink</a></li>
+        
+        <p><a href="https://anima.dk/">Anima</a></p>
+        <p><a href="https://www.worldanimalprotection.dk/">World Animal Protection</a></p>
+        <p><a href="https://www.foedevarestyrelsen.dk/">Fødevarestyrelsen</a></p>
+        <p><a href="https://faktalink.dk/">Faktalink</a></p>
 
-        </ul>
+        
     </div>
 </section>
 
-<div>© 2020 - Foreningen for Dyrevelfærd</div>
+
         </footer>
      );
 }
