@@ -29,6 +29,12 @@ const Footer = () => {
 
     
     `;
+
+const textstyle=css`
+margin:0;
+
+
+`;
     
     /*const liststyle=css`
         list-style: none;
@@ -46,22 +52,22 @@ const Footer = () => {
 <footer>
         <section css={footerstyle}>
             <div css={footersubsstyle}>
-        <h2>KONTAKT</h2>
-        <p>Tornebuskvej 22, 1.</p>
-        <p>1131 København K</p>
-        <p>CVR: 22446187</p>
-        <p>Husk at du kan få fradag for donationer på op til 16.600</p>
+        <h2 css={textstyle}>KONTAKT</h2>
+        <p css={textstyle}>Tornebuskvej 22, 1.</p>
+        <p css={textstyle}>1131 København K</p>
+        <p css={textstyle}>CVR: 22446187</p>
+        <p css={textstyle}>Husk at du kan få fradag for donationer på op til 16.600</p>
          </div>
 
          <div>© 2020 - Foreningen for Dyrevelfærd</div>
 
     <div css={footersubsstyle} >
-        <h2>PARTNERE</h2>
+        <h2 css={textstyle}>PARTNERE</h2>
         
-        <p><a href="https://anima.dk/">Anima</a></p>
-        <p><a href="https://www.worldanimalprotection.dk/">World Animal Protection</a></p>
-        <p><a href="https://www.foedevarestyrelsen.dk/">Fødevarestyrelsen</a></p>
-        <p><a href="https://faktalink.dk/">Faktalink</a></p>
+        <p css={textstyle}><a href="https://anima.dk/">Anima</a></p>
+        <p css={textstyle}><a href="https://www.worldanimalprotection.dk/">World Animal Protection</a></p>
+        <p css={textstyle}><a href="https://www.foedevarestyrelsen.dk/">Fødevarestyrelsen</a></p>
+        <p css={textstyle}><a href="https://faktalink.dk/">Faktalink</a></p>
 
         
     </div>
