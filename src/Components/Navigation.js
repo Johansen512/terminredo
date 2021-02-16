@@ -8,14 +8,13 @@ const Navigation = () => {
 
 
     const navistyle=css`
-    background-color: white;
+   
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items:center;
     padding:1rem;
     height: 5rem;
-    border: solid 4px red;
     margin: 0 3rem;
 
     `;
@@ -30,7 +29,7 @@ const Navigation = () => {
     align-items:flex-start;
     justify-content: flex-end;
     margin: 0.1rem;
-    border: solid 4px black;
+    
     
    
 

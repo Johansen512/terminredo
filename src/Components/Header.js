@@ -8,7 +8,7 @@ const Header = () => {
 
 
     const headerstyle=css`
-    background-color: #e2edff;
+     background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
