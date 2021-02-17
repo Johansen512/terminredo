@@ -7,6 +7,9 @@ const DataContextProvider = (props) => {
     const [data, setData] = useState(null);
     const [herodata, setHerodata]=useState (null);
     const [omosdata, setOmosdata]=useState (null);
+    const [frivilligdata, setFrivilligdata]=useState(null);
+    const [dyrinoddata, setDyrinoddata]=useState(null);
+    const [adoptdata, setAdoptdata] = useState (null);
 
     useEffect (() => {
           
@@ -70,9 +73,79 @@ const DataContextProvider = (props) => {
 
               //Alle Omos slut
 
+
+              //Alle Frivillig Fetch 
+
+
+              useEffect (() => {
+          
+        
+                fetch("http://localhost:4000/api/v1/volunteers", {
+        
+        
+              })
+              .then (response => response.json())
+              .then (result => setFrivilligdata(result)) 
+              
+                  }, []);
+                      
+                  
+                  
+                  frivilligdata && console.log(frivilligdata)
+        
+                  console.log ("hrrmfff")
+
+              //Alle Frivillig slut
+
+              //Dyr i nød Fetch 
+
+
+              useEffect (() => {
+          
+        
+                fetch("http://localhost:4000/api/v1/adoptsections/2", {
+        
+        
+              })
+              .then (response => response.json())
+              .then (result => setDyrinoddata(result)) 
+              
+                  }, []);
+                      
+                  
+                  
+             dyrinoddata && console.log(dyrinoddata)
+        
+                  console.log ("piiv piiv")
+
+              //Dyr i nød slut
+
+              //Adopt fetch 
+
+
+              useEffect (() => {
+          
+        
+                fetch("http://localhost:4000/api/v1/animals", {
+        
+        
+              })
+              .then (response => response.json())
+              .then (result => setAdoptdata(result)) 
+              
+                  }, []);
+                      
+                  
+                  
+                  adoptdata && console.log(adoptdata)
+        
+                  console.log ("en huuuund")
+
+              //Adopt slut
+
     return ( 
 
-<dataContext.Provider value={{ data, setData, herodata, setHerodata, omosdata, setOmosdata}}>
+<dataContext.Provider value={{ data, setData, herodata, setHerodata, omosdata, setOmosdata, frivilligdata, setFrivilligdata, dyrinoddata, setDyrinoddata, adoptdata, setAdoptdata}}>
 
 {props.children}
 </dataContext.Provider>

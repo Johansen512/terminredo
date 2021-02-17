@@ -1,9 +1,20 @@
 /**@jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { dataContext } from "../Contexts/DataContext";
+import {useContext, useEffect, useState} from "react";
 
 const Adopter = () => {
 
+//Data hentet fra context
+const { adoptdata } = useContext(dataContext);
+
+adoptdata && console.log("from context:", adoptdata);
+
+const adoptblock=css`
+margin: 5%;
+max-width:100%100px;
+
+`;
 
   const headsectionstyle=css`
   
@@ -23,6 +34,7 @@ const Adopter = () => {
   flex-direction:row;
   flex-wrap:wrap;
   margin: 0  20%;
+  max-width:100%;
 
   
   
@@ -30,9 +42,16 @@ const Adopter = () => {
 
   const articlegridstyle=css`
  display: grid;
- grid-template-columns: 1fr 1fr 1fr;
+ grid-template-columns:auto;
  border:black solid 1px;
+ max-width:45%;
+ margin: 0.1rem;
   
+  
+  `;
+
+  const infotextstyle=css`
+ 
   
   `;
 
@@ -43,7 +62,14 @@ display:flex;
 flex-direction: column;
 margin: 0  20%;
 
+`;
 
+const imagestyle=css`
+grid-column:1/2;
+object-fit: cover;
+max-width: 100%;
+height: 100%;
+overflow: hidden;
 
 `;
 
@@ -53,6 +79,7 @@ grid-column:2/4;
 
 display:flex;
 flex-direction:column;
+margin:0.5rem;
 
 
 
@@ -64,9 +91,9 @@ margin:0;
 
 
 `;
-    return ( 
+    return adoptdata && ( 
 
-      <div >
+      <div css={adoptblock}>
 <section css={headsectionstyle}>
         <h2 css={textstyle}>Adoptér et dyr</h2>
 
@@ -80,104 +107,22 @@ margin:0;
   <p css={textstyle}>Antal dyr </p>
   </section>
 
+
+  
+
   <section css={adoptstyle}>
-
+  { adoptdata.map (content => 
+  
   <article css={articlegridstyle}>
-  <img src="/placeholderhorse.jpg" alt="animal" />
+    
+    <img css={imagestyle} src={content.asset.url} alt="animal" />
+    <section css={infosectionstyle}><h4>{ content.name}</h4>
+    <p css={infotextstyle}>{ content.description}</p>
+    <p>Været på internattet i { content.age} dage</p></section></article>)} 
 
-  <section css={infosectionstyle}>
-  <h4>Sophie</h4>
 
-  <p>tekst bla bla</p>
-  <p>Har været her i X uger</p>
-  </section>
-  </article>
-
-  <article css={articlegridstyle}>
-  <img src="/placeholderhorse.jpg" alt="animal" />
-
-  <section>
-  <h4>Sophie</h4>
-
-  <p>tekst bla bla</p>
-  <p>Har været her i X uger</p>
-  </section>
-  </article>
-
-  <article css={articlegridstyle}>
-  <img src="/placeholderhorse.jpg" alt="animal" />
-<section>
-  <h4>Sophie</h4>
-
-  <p>tekst bla bla</p>
-  <p>Har været her i X uger</p>
-  </section>
-  </article>
-
-  <article css={articlegridstyle}>
-  <img src="/placeholderhorse.jpg" alt="animal" />
-
-  <section>
-  <h4>Sophie</h4>
-
-  <p>tekst bla bla</p>
-  <p>Har været her i X uger</p>
-  </section>
-  </article>
-
-  <article css={articlegridstyle}>
-  <img src="/placeholderhorse.jpg" alt="animal" />
-
-  <section>
-  <h4>Sophie</h4>
-
-  <p>tekst bla bla</p>
-  <p>Har været her i X uger</p>
-  </section>
-  </article>
-
-  <article css={articlegridstyle}>
-  <img src="/placeholderhorse.jpg" alt="animal" />
-
-  <section>
-  <h4>Sophie</h4>
-
-  <p>tekst bla bla</p>
-  <p>Har været her i X uger</p>
-  </section>
-  </article>
-
-  <article css={articlegridstyle}>
-  <img src="/placeholderhorse.jpg" alt="animal" />
-
-  <section>
-  <h4>Sophie</h4>
-
-  <p>tekst bla bla</p>
-  <p>Har været her i X uger</p>
-  </section>
-  </article>
-
-  <article css={articlegridstyle}>
-  <img src="/placeholderhorse.jpg" alt="animal" />
-
-  <section>
-  <h4>Sophie</h4>
-
-  <p>tekst bla bla</p>
-  <p>Har været her i X uger</p>
-  </section>
-  </article>
-  <article css={articlegridstyle}>
-  <img src="/placeholderhorse.jpg" alt="animal" />
-
-  <section>
-  <h4>Sophie</h4>
-
-  <p>tekst bla bla</p>
-  <p>Har været her i X uger</p>
-  </section>
-  </article>
+ 
+ 
   </section>
 
 </div>
