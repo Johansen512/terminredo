@@ -10,11 +10,12 @@ const DataContextProvider = (props) => {
     const [frivilligdata, setFrivilligdata]=useState(null);
     const [dyrinoddata, setDyrinoddata]=useState(null);
     const [adoptdata, setAdoptdata] = useState (null);
+    const [assetdata, setAssetdata]=useState(null);
 
     useEffect (() => {
           
         
-        fetch("http://localhost:4000/api/v1/adoptsections/1", {
+        fetch("http://localhost:4000/api/v1/adoptsections", {
 
 
       })
@@ -143,9 +144,40 @@ const DataContextProvider = (props) => {
 
               //Adopt slut
 
+       
+
+
+              //All Assets fetch
+
+              useEffect (() => {
+          
+        
+                fetch("http://localhost:4000/api/v1/assets", {
+        
+        
+              })
+              .then (response => response.json())
+              .then (result => setAssetdata(result)) 
+              
+                  }, []);
+                      
+                  
+                  
+                  assetdata && console.log(assetdata)
+        
+                  console.log ("en ass ... see what I did?")
+
+
+
+
+
+
+
+              //All Assets fetch slut
+
     return ( 
 
-<dataContext.Provider value={{ data, setData, herodata, setHerodata, omosdata, setOmosdata, frivilligdata, setFrivilligdata, dyrinoddata, setDyrinoddata, adoptdata, setAdoptdata}}>
+<dataContext.Provider value={{ data, setData, herodata, setHerodata, omosdata, setOmosdata, frivilligdata, setFrivilligdata, dyrinoddata, setDyrinoddata, adoptdata, setAdoptdata, assetdata, setAssetdata}}>
 
 {props.children}
 </dataContext.Provider>

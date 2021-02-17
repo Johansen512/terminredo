@@ -7,12 +7,14 @@ const Adopter = () => {
 
 //Data hentet fra context
 const { adoptdata } = useContext(dataContext);
+const { data } = useContext(dataContext);
 
 adoptdata && console.log("from context:", adoptdata);
 
 const adoptblock=css`
 margin: 5%;
-max-width:100%100px;
+
+background-color: yellow;
 
 `;
 
@@ -21,6 +23,7 @@ max-width:100%100px;
   display:flex;
   flex-direction:column;
   margin: 0 20%;
+ 
 
   
   
@@ -71,6 +74,11 @@ max-width: 100%;
 height: 100%;
 overflow: hidden;
 
+
+`;
+
+const display = css`
+height:200px;
 `;
 
 
@@ -91,20 +99,23 @@ margin:0;
 
 
 `;
-    return adoptdata && ( 
+
+
+adoptdata && console.log (adoptdata.length)
+    return adoptdata  && ( 
 
       <div css={adoptblock}>
 <section css={headsectionstyle}>
-        <h2 css={textstyle}>Adoptér et dyr</h2>
+   {data && <h2 css={textstyle}>{data[2].title}</h2>}
 
-        <p css={textstyle}>gnyf gnyf gnyf</p>
-
+    {data &&  <p css={textstyle}>{data[2].content}</p>}
+{data && <img css={display} src={data[2].asset.url} alt="beagle" />}
         </section>
 
 <section css={articleblockstyle}>
 
-  <h3 css={textstyle}>Dyr hos os</h3>
-  <p css={textstyle}>Antal dyr </p>
+  <h3 css={textstyle}>Dyr hos os </h3>
+  <p css={textstyle}>Antal dyr: {adoptdata && (adoptdata.length)}</p>
   </section>
 
 

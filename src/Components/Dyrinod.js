@@ -11,10 +11,10 @@ dyrinoddata && console.log("from context:", dyrinoddata);
 
 const dyrinodstyle=css`
     
-    top:1100px;
+    top:1300px;
    margin: 0 10px;
     border: red solid 4px;
-    position:absolute;
+    
     height:200px;
     width: 100%;
     overflow:hidden;
