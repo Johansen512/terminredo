@@ -1,15 +1,19 @@
 /**@jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { dataContext } from "../Contexts/DataContext";
+import Hero from "../Components/Hero"
 import Omos from "../Components/Omos";
 import Frivillig from "../Components/Frivillig";
 import Dyrinod from "../Components/Dyrinod";
 import Adopter from "../Components/Adopter";
+import {useContext, useEffect, useState} from "react";
 
 const Home = () => {
+
+
     return ( 
 <>
-        <h1>hep hep</h1>
+      <Hero />
         <Omos />
         <Frivillig />
         <Dyrinod />

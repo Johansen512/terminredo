@@ -1,15 +1,20 @@
 /**@jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { dataContext } from "../Contexts/DataContext";
+import {useContext, useEffect, useState} from "react";
 
 const Omos = () => {
+//Data hentet fra context
+const { omosdata } = useContext(dataContext);
 
+omosdata && console.log("from context:", omosdata);
 
   const sectionstyle=css`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   padding:0.5rem;
+  margin: 2rem 20%;
 
 `;
   const articlestyle=css`
@@ -19,6 +24,7 @@ const Omos = () => {
     align-items:flex-start;
     justify-content: flex-start;
     margin: 0.1rem;
+    border:2px solid blue;
   
   `;
   
@@ -26,23 +32,15 @@ const Omos = () => {
   
   
   
-    return ( 
+    return omosdata && ( 
 <section css={sectionstyle}>
-        <article css={articlestyle}><h2>Om os</h2>
-        <p> gnyf gnyf gnyf gnyf gnyf 
-   </p>
+{ omosdata.map (content => <article css={articlestyle}><h2>{ content.title}</h2><p>{ content.content}</p></article>)} 
+
+
+  
         
-        </article>
-
-<article css={articlestyle}><h2>DYR & MENNESKER</h2>
-<p>gnyf gnyf gnyf gnyf gnyf </p>
-
-</article>
-
-<article css={articlestyle}><h2>MAD & FORBRUG</h2>
-        <p>gnyf gnyf gnyf gnyf gnyf </p>
-        
-        </article></section>
+       
+</section>
      );
 }
  
