@@ -5,6 +5,7 @@ import Hero from "../Components/Hero"
 import Omos from "../Components/Omos";
 import Frivillig from "../Components/Frivillig";
 import Dyrinod from "../Components/Dyrinod";
+import Nyhedsbrev from "../Components/Nyhedsbrev";
 import Adopter from "../Components/Adopter";
 import {useContext, useEffect, useState} from "react";
 
@@ -17,6 +18,7 @@ const Home = () => {
         <Omos />
         <Frivillig />
         <Dyrinod />
+        <Nyhedsbrev />
         <Adopter  />
         </>
      );
