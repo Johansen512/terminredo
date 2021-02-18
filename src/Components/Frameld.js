@@ -20,8 +20,10 @@ const Frameld= () => {
             password:data.password
         }
         
-        checkedperson === person ? localStorage.removeItem('User', JSON.stringify(person)) : alert("Der er ingen med det navn og email tilmeldt!") 
-      
+        checkedperson === person ?  localStorage.removeItem('User', JSON.stringify(person)) : alert("Der er ingen med det navn og email tilmeldt!")
+        
+        
+        
         navigate("/Unsplash")
 
         
