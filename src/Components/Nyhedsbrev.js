@@ -9,18 +9,16 @@ import Frameld from "../Components/Frameld";
 
 
 const Nyhedsbrev = () => {
-    const { checkedpassword } = useContext(dataContext);
-    const { checkedemail } = useContext(dataContext);
+    const { checkedperson } = useContext(dataContext);
+    
 
-    const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => {console.log (data.email, data.password);
+  
 
-        localStorage.setItem('myEmailinLocalStorage', data.email)
-    localStorage.setItem('myPasswordinLocalStorage', data.password);
-    navigate("/Newssplash");
+        
+      
 
 
-    };
+    
 
 
     const sectionstyle=css`
@@ -47,24 +45,11 @@ const Nyhedsbrev = () => {
     return ( 
         <section css={sectionstyle}>
             <article css={articlestyle}>
-            {checkedpassword ? <Frameld /> : <Tilmeld/>}
+            {checkedperson ? <Frameld /> : <Tilmeld/>}
        
         </article>
 
-        <form  onSubmit={handleSubmit(onSubmit)}>
-    
-    
-      
-     
-     
-      <input type='email' name="email"  ref={register({ required: true })} />
-      <input type='password' step="1" name="password"  ref={register({ required: true })} />
-    
-      
-      {errors.exampleRequired && <span>This field is required</span>}
-      
-      <input type="submit" value="Tilmeld"/>
-    </form>
+       
 
 
 

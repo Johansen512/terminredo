@@ -14,8 +14,7 @@ const DataContextProvider = (props) => {
 
 //Monsters
     const [logindata, setLogindata]=useState (null);
-    const [checkedemail,setCheckedemail]=useState(null);
-    const [checkedpassword,setCheckedpassword]=useState(null);
+    const [checkedperson,setCheckedperson]=useState(null);
     const [byemessage, setByemessage]=useState(null);
     
 
@@ -25,20 +24,20 @@ const DataContextProvider = (props) => {
 
      useEffect(()=>{
 
-        let storedEmail = localStorage.getItem('myEmailinLocalStorage');
-        let storedPassword = localStorage.getItem('myPasswordinLocalStorage');
+        let storedUser = localStorage.getItem('User');
         
-        setCheckedemail(storedEmail);
-        setCheckedpassword(storedPassword);
+        
+        setCheckedperson(storedUser);
+        
        
         
 
-     console.log ("from local:", checkedemail, checkedpassword );
+     console.log ("from local:", checkedperson );
 
 
         
     
-      }, [logindata, setLogindata, checkedemail, checkedpassword, setCheckedemail, setCheckedpassword, byemessage, setByemessage]);
+      }, [logindata, setLogindata, checkedperson, setCheckedperson, byemessage, setByemessage]);
 
 //Monsters slut
 
@@ -220,7 +219,7 @@ const DataContextProvider = (props) => {
 
     return ( 
 
-<dataContext.Provider value={{ data, setData, checkedpassword, setCheckedpassword, checkedemail, setCheckedemail, herodata, setHerodata, omosdata, setOmosdata, frivilligdata, setFrivilligdata, dyrinoddata, setDyrinoddata, adoptdata, setAdoptdata, assetdata, setAssetdata}}>
+<dataContext.Provider value={{ data, setData, checkedperson, setCheckedperson, herodata, setHerodata, omosdata, setOmosdata, frivilligdata, setFrivilligdata, dyrinoddata, setDyrinoddata, adoptdata, setAdoptdata, assetdata, setAssetdata}}>
 
 {props.children}
 </dataContext.Provider>
