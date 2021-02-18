@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import { dataContext } from "../Contexts/DataContext";
 import {useContext, useEffect, useState} from "react";
-import { isCompositeComponentWithType } from 'react-dom/cjs/react-dom-test-utils.development';
+
 
 const Frivillig = () => {
 
@@ -50,7 +50,7 @@ background-color:white;
   `;
 
   const backgroundstyle=css`
-  background-color:lightgray;
+  background-color:#f7f7f7;
   width:100%;
   
   
