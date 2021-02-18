@@ -24,7 +24,7 @@ omosdata && console.log("from context:", omosdata);
     align-items:flex-start;
     justify-content: flex-start;
     margin: 0.1rem;
-    border:2px solid blue;
+    
   
   `;
   

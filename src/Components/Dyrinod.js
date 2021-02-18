@@ -13,7 +13,7 @@ const dyrinodstyle=css`
     
     top:1300px;
    margin: 0 10px;
-    border: red solid 4px;
+    
     
     height:200px;
     width: 100%;

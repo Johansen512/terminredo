@@ -18,8 +18,7 @@ const herostyle=css`
     
     
    top:80px;
-    border: red solid 4px;
-    position:absolute;
+   position:absolute;
     height:200px;
     width: 100%;
     overflow:hidden;
