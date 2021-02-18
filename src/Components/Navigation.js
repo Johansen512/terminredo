@@ -56,6 +56,7 @@ const Navigation = () => {
 <Link to="/Frivillig"css={linkstyle} > Bliv frivillig </Link> 
 <Link to="/Dyrinod" css={linkstyle}> Dyr i nød? </Link> 
 <Link to="/Adopter"css={linkstyle} > Adoptér et dyr </Link> 
+<Link to="/Newssplash"css={linkstyle} > Åh nej </Link> 
      
 
 

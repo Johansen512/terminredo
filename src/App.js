@@ -6,6 +6,7 @@ import Dyrinod from "./Components/Dyrinod";
 import Adopter from "./Components/Adopter";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
+import Newssplash from "./Components/Newssplash";
 import DataContextProvider from './Contexts/DataContext';
 import React from 'react';
 import { Router } from '@reach/router';
@@ -22,7 +23,10 @@ function App() {
       <Frivillig path="/Frivillig" />
       <Dyrinod path="/Dyrinod" />
       <Adopter path="/Adopter" />
+      <Newssplash path="Newssplash" />
+     
       </Router>
+      
       <Footer />
     </>
 
