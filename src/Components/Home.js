@@ -7,6 +7,7 @@ import Frivillig from "../Components/Frivillig";
 import Dyrinod from "../Components/Dyrinod";
 import Nyhedsbrev from "../Components/Nyhedsbrev";
 import Adopter from "../Components/Adopter";
+import Slider from "../Components/Slider";
 import {useContext, useEffect, useState} from "react";
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
         <Frivillig />
         <Dyrinod />
         <Nyhedsbrev />
+        <Slider />
         <Adopter  />
         </>
      );
