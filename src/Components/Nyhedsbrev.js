@@ -14,7 +14,6 @@ const Nyhedsbrev = () => {
     background-color:#e2edff;
     height: 100px;
     margin: 10px 0;
-    border:solid blue 4px;
     width:100%auto;    
     `;
 

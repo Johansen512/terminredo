@@ -33,6 +33,11 @@ const Footer = () => {
 const textstyle=css`
 margin:0;
 
+a{
+    text-decoration:none;
+    color:blue;
+}
+
 
 `;
     

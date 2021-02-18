@@ -14,8 +14,6 @@ adoptdata && console.log("from context:", adoptdata);
 const adoptblock=css`
 margin: 5%;
 
-background-color: yellow;
-
 `;
 
   const headsectionstyle=css`
