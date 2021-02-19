@@ -15,18 +15,31 @@ const Header = () => {
     padding:1rem;
     height: 5rem;
 
+    @media (max-width: 420px) {
+        height:2rem;
+      }
+
     `;
 
     const sectionstyle=css`
     display: flex;
     flex-direction: row;
+
+    @media (max-width: 420px) {
+        h3{
+            font-size:1rem
+        }
+      }
     
     `;
 
 const logostyle =css`
 height: 2rem;
 padding:0.5rem;
-
+@media (max-width: 420px) {
+        height:0.5rem;
+        padding:0.1rem;
+      }
 `;
 
     

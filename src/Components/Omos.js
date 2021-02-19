@@ -17,6 +17,14 @@ omosdata && console.log("from context:", omosdata);
   margin: 2rem 10%;
   font-weight:400;
 
+  
+ @media (max-width: 420px) {
+    flex-direction:column;
+    max-width:100%;
+    padding:0.1rem;
+  margin: 2rem 0;
+      }
+
 `;
   const articlestyle=css`
   
@@ -25,6 +33,18 @@ omosdata && console.log("from context:", omosdata);
     align-items:flex-start;
     justify-content: flex-start;
     margin: 0.1rem;
+
+    
+ @media (max-width: 420px) {
+
+
+    h2{
+      font-size:0.6rem;
+    }
+   p{
+     font-size:  0.4rem;
+   }
+      }
     
   
   `;
