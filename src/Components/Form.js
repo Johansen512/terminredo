@@ -1,7 +1,6 @@
-/**@jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+
 import { dataContext } from "../Contexts/DataContext";
-import {useContext, useEffect, useState} from "react";
+import {useContext} from "react";
 import { useForm } from "react-hook-form";
 const Form = () => {
 
@@ -17,7 +16,7 @@ const Form = () => {
             password:data.password
         }
 
-        userlog === userperson ?  localStorage.setItem('User', JSON.stringify(userperson)) : alert ("Du er allerede logget ind");
+        userlog === userperson ?  localStorage.setItem('Loggged', JSON.stringify(userperson)) : alert ("Du er allerede logget ind");
 
     }
 

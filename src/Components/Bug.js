@@ -1,7 +1,6 @@
-/**@jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
 
 
+//Denne side er ikke i brug
 const Bug  = () => {
     return ( 
 

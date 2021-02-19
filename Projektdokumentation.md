@@ -10,7 +10,7 @@ Stack:
 React
 Emotion
 Reach/Router
-React Simple Slider
+React Awesomeslider
 React Hook Form
 
 Vurdering af egen indsats og gennemførelse af opgaveforløbet:
