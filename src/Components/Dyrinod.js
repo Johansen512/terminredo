@@ -9,21 +9,36 @@ const { dyrinoddata } = useContext(dataContext);
 
 dyrinoddata && console.log("from context:", dyrinoddata);
 
+
+const wrap = css`
+margin: 40px 0;
+
+h2{
+margin-top:20px;
+    font-size:40px;
+}
+
+p{
+    margin-top:0;
+}
+`;
+
 const dyrinodstyle=css`
     
-    top:1300px;
-   margin: 0 10px;
-    
+    top:1260px;
+   margin: 20px 0;
+    position:absolute;
     
     height:200px;
     width: 100%;
     overflow:hidden;
+    
     `;
 
 
 
 const dyrinodtextstyle=css`
-margin:0;
+margin:30px 0;
 position: relative;
 left: 300px;
 z-index:10;
@@ -37,9 +52,9 @@ color:white;
 
     return dyrinoddata && ( 
 
-<>
+<div css={wrap}>
        <div css={dyrinodtextstyle}>
-        <h1>{dyrinoddata.title}</h1>
+        <h2>{dyrinoddata.title}</h2>
        <p>{dyrinoddata.content}</p>
         </div>
 
@@ -48,7 +63,7 @@ color:white;
 
        </div>
        
-        </>
+        </div>
      );
 }
  

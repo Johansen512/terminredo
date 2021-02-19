@@ -22,6 +22,8 @@ margin: 5%;
   display:flex;
   flex-direction:column;
   margin: 0 20%;
+  z-index:200;
+  position:relative;
  
 
   
@@ -35,7 +37,7 @@ margin: 5%;
   display: flex;
   flex-direction:row;
   flex-wrap:wrap;
-  margin: 0  20%;
+  margin: 0  10%;
   max-width:100%;
 
   
@@ -47,7 +49,7 @@ margin: 5%;
  grid-template-columns:auto;
  border:black solid 1px;
  max-width:45%;
- margin: 0.1rem;
+ margin:0.5rem;
   
   
   `;
@@ -62,7 +64,22 @@ const articleblockstyle=css`
 
 display:flex;
 flex-direction: column;
-margin: 0  20%;
+margin-top:80px;
+margin-bottom: 20px;
+margin-left:10%;
+margin-right:0;
+color:black;
+
+h2{
+  margin:1rem 0;
+color:black;
+}
+
+p{
+
+  margin:0;
+color:black;
+}
 
 `;
 
@@ -74,10 +91,16 @@ height: 100%;
 overflow: hidden;
 
 
+
 `;
 
 const display = css`
 height:200px;
+position:absolute;
+top:1610px;
+width: 100%;
+overflow:hidden;
+margin:1rem 0;
 `;
 
 
@@ -95,6 +118,7 @@ margin:0.5rem;
 
 const textstyle=css`
 margin:0;
+color:white;
 
 
 `;
@@ -108,13 +132,15 @@ adoptdata && console.log (adoptdata.length)
    {data && <h2 css={textstyle}>{data[2].title}</h2>}
 
     {data &&  <p css={textstyle}>{data[2].content}</p>}
+    </section>
+    <section>
 {data && <img css={display} src={data[2].asset.url} alt="beagle" />}
         </section>
 
 <section css={articleblockstyle}>
 
-  <h3 css={textstyle}>Dyr hos os </h3>
-  <p css={textstyle}>Antal dyr: {adoptdata && (adoptdata.length)}</p>
+  <h2 >Dyr hos os </h2>
+  <p >Antal dyr: {adoptdata && (adoptdata.length)}</p>
   </section>
 
 

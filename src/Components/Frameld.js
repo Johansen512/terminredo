@@ -1,3 +1,5 @@
+/**@jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
 import { dataContext } from "../Contexts/DataContext";
 import { useForm } from "react-hook-form";
 import { navigate } from "@reach/router";
@@ -30,6 +32,32 @@ const Frameld= () => {
 
     };
 
+    const wrap=css`
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-start;
+    
+    h2{
+        margin:1px 1px;
+        
+    }
+
+    p{
+        margin:0;
+        padding-bottom:1rem;
+        
+    }
+
+    form{
+
+        margin-left:3rem;
+
+
+    }
+    
+    `;
+
 
 
 
@@ -38,10 +66,12 @@ const Frameld= () => {
 
 
     return ( 
-<>
+<div css={wrap}>
+
+<div>
         <h2>Afmeld vores nyhedsbrev</h2>
         <p>du kan altid komme tilbage</p>
-
+        </div>
 
         <form  onSubmit={handleSubmit(onSubmit)}>
     
@@ -57,7 +87,7 @@ const Frameld= () => {
     
     <input type="submit" value="Afmeld"/>
   </form>
-</>
+</div>
 
      );
 }

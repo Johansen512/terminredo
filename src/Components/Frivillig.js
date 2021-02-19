@@ -14,7 +14,9 @@ frivilligdata && console.log("from context:", frivilligdata);
 const frivilligstyle=css`
 background-color: #e2edff;
 width:100%;
-margin:20px;
+margin:20px 0;
+
+
  
 
 
@@ -25,15 +27,17 @@ margin:20px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding:0.5rem;
-  margin: 2rem 20%;
+  
+  
+  margin: 2rem 10%;
+  font-weight:400;
 
 `;
 
 
 const imagestyle=css`
 margin:0.2rem;
-max-width:80%;
+max-width:90%;
 background-color:white;
 
 `;
@@ -44,7 +48,7 @@ background-color:white;
     align-items:flex-start;
     justify-content: flex-start;
     margin: 0.5rem;
-    padding:0.5rem;
+   
     
   
   `;
@@ -54,19 +58,23 @@ background-color:white;
   width:100%;
   
   
+  
   `;
 
 const backgroundstyle2=css`
 background-color:white;
 width:100%;
 
+p{
+  padding:0.5rem;
+}
 
 `;
 
 
 const h2style=css`
 
-margin: 2rem 20%;
+margin: 2rem 10%;
 
 
 

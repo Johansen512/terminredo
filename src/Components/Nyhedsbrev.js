@@ -26,7 +26,7 @@ const Nyhedsbrev = () => {
     align-items:center;
     background-color:#e2edff;
     height: 100px;
-    margin: 10px 0;
+    margin: 100px 0;
     width:100%auto;    
     `;
 
