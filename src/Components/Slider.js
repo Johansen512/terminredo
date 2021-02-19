@@ -1,7 +1,16 @@
-import SimpleImageSlider from "react-simple-image-slider";
+i
 import { dataContext } from "../Contexts/DataContext";
 
 const Slider = () => {
+
+ 
+
+
+
+
+
+
+
 
     const images = [
         { url: "http://localhost:4000/file-bucket/1589743596506amina.jpg" },
@@ -16,11 +25,7 @@ const Slider = () => {
     return ( 
         
         <div>
-        <SimpleImageSlider
-          width={896}
-          height={504}
-          images={images}
-        />
+        
       </div>
 
     );
