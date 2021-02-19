@@ -39,7 +39,10 @@ margin: 5%;
   flex-wrap:wrap;
   margin: 0  10%;
   max-width:100%;
-
+  
+  @media (max-width: 420px) {
+    flex-direction:column;
+      }
   
   
   `;
@@ -50,7 +53,13 @@ margin: 5%;
  border:black solid 1px;
  max-width:45%;
  margin:0.5rem;
+
+ @media (max-width: 420px) {
+    flex-direction:column;
+    max-width:100%;
+      }
   
+ 
   
   `;
 

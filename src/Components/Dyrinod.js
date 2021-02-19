@@ -32,6 +32,13 @@ const dyrinodstyle=css`
     height:200px;
     width: 100%;
     overflow:hidden;
+
+
+    
+    @media (max-width: 420px) {
+
+top:2000px;
+}
     
     `;
 
@@ -43,6 +50,22 @@ position: relative;
 left: 300px;
 z-index:10;
 color:white;
+
+
+@media (max-width: 420px) {
+
+    left: 100px;
+h2{
+    font-size:1rem;
+}
+
+p{
+    font-size:0.6rem;
+}
+
+
+
+}
 
 `;
 

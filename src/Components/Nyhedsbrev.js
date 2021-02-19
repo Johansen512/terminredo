@@ -27,12 +27,18 @@ const Nyhedsbrev = () => {
     background-color:#e2edff;
     height: 100px;
     margin: 100px 0;
-    width:100%auto;    
+    width:100%;
+    
+    @media (max-width: 420px) {
+        height: 50px;
+        margin-top:150px;
+
+    }
     `;
 
     const articlestyle=css`
     
-    margin: 0 20%auto;
+    margin: 0 20%;
     padding:0;
     
     

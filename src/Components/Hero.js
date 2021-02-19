@@ -21,10 +21,17 @@ const herostyle=css`
    position:absolute;
     height:200px;
     width: 100%;
+    
     overflow:hidden;
-    `;
+    
 
+@media (max-width: 420px) {
+    height:100px;
+    top:70px;
+    object-fit:fill;
+}
 
+`;
 
 const herotextstyle=css`
 margin:0;
@@ -33,6 +40,17 @@ position: relative;
 left: 215px;
 z-index:10;
 color:white;
+
+@media (max-width: 420px) {
+        h1{
+            font-size:1rem;
+            
+        }
+
+        p{
+            font-size:0.8rem;
+        }
+      }
 
 `;
 

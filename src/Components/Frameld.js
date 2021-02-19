@@ -37,21 +37,40 @@ const Frameld= () => {
     flex-direction:row;
     align-items:center;
     justify-content:flex-start;
+
+    @media (max-width: 420px) {
+
+        flex-direction:row;
+            }
     
     h2{
         margin:1px 1px;
-        
+        @media (max-width: 420px) {
+
+font-size:0.7rem;
+    }
+
     }
 
     p{
         margin:0;
         padding-bottom:1rem;
+
+        @media (max-width: 420px) {
+
+font-size:0.5rem;
+    }
         
     }
 
     form{
 
         margin-left:3rem;
+
+        @media (max-width: 420px) {
+            height:40px;
+        width:40px;
+        }
 
 
     }

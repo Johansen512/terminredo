@@ -32,6 +32,12 @@ margin:20px 0;
   margin: 2rem 10%;
   font-weight:400;
 
+  
+  @media (max-width: 420px) {
+
+flex-direction: column;
+}
+
 `;
 
 
@@ -48,6 +54,7 @@ background-color:white;
     align-items:flex-start;
     justify-content: flex-start;
     margin: 0.5rem;
+
    
     
   
