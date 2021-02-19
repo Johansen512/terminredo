@@ -12,7 +12,34 @@ const DataContextProvider = (props) => {
     const [adoptdata, setAdoptdata] = useState (null);
     const [assetdata, setAssetdata]=useState(null);
 
-//Monsters
+
+    //Login
+    const [userlog, setUserlog]=useState(null);
+
+//check localstorage for Login
+
+useEffect(()=>{
+
+  let storedloggedUser = localStorage.getItem('User');
+  
+  
+  setUserlog(storedloggedUser);
+  
+ 
+  
+
+console.log ("from local (login):", userlog );
+
+
+  
+
+}, [userlog, setUserlog]);
+
+
+
+    //Login slut
+
+//Nyhedsbrevs login ting
     const [logindata, setLogindata]=useState (null);
     const [checkedperson,setCheckedperson]=useState(null);
     const [byemessage, setByemessage]=useState(null);
@@ -39,7 +66,7 @@ const DataContextProvider = (props) => {
     
       }, [logindata, setLogindata, checkedperson, setCheckedperson, byemessage, setByemessage]);
 
-//Monsters slut
+//Nyhedsbrevs login ting slut
 
 
 
@@ -219,7 +246,7 @@ const DataContextProvider = (props) => {
 
     return ( 
 
-<dataContext.Provider value={{ data, setData, checkedperson, setCheckedperson, herodata, setHerodata, omosdata, setOmosdata, frivilligdata, setFrivilligdata, dyrinoddata, setDyrinoddata, adoptdata, setAdoptdata, assetdata, setAssetdata}}>
+<dataContext.Provider value={{ data, setData, checkedperson, setCheckedperson, userlog, setUserlog, herodata, setHerodata, omosdata, setOmosdata, frivilligdata, setFrivilligdata, dyrinoddata, setDyrinoddata, adoptdata, setAdoptdata, assetdata, setAssetdata}}>
 
 {props.children}
 </dataContext.Provider>

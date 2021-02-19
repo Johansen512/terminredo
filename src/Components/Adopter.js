@@ -2,6 +2,7 @@
 import { css } from '@emotion/react';
 import { dataContext } from "../Contexts/DataContext";
 import {useContext, useEffect, useState} from "react";
+import Slider from "../Components/Slider";
 
 const Adopter = () => {
 
@@ -120,7 +121,7 @@ adoptdata && console.log (adoptdata.length)
   
 
   <section css={adoptstyle}>
-  { adoptdata.map (content => 
+  { adoptdata.slice(0,8).map (content => 
   
   <article css={articlegridstyle}>
     
@@ -133,6 +134,8 @@ adoptdata && console.log (adoptdata.length)
  
  
   </section>
+
+  <Slider />
 
 </div>
 
