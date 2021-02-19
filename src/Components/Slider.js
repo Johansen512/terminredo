@@ -1,9 +1,21 @@
-i
-import { dataContext } from "../Contexts/DataContext";
-
+/**@jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
+import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
+import 'react-awesome-slider/dist/custom-animations/fall-animation.css';
 const Slider = () => {
 
- 
+  
+    
+  
+const sliderstyle=css`
+width:55%;
+margin: 0.5rem 20%;
+
+
+
+`;
 
 
 
@@ -11,21 +23,19 @@ const Slider = () => {
 
 
 
-
-    const images = [
-        { url: "http://localhost:4000/file-bucket/1589743596506amina.jpg" },
-        { url: "http://localhost:4000/file-bucket/1589743602933carla.jpg" },
-        { url: "http://localhost:4000/file-bucket/1589743606893flotfyr.jpeg" },
-        { url: "http://localhost:4000/file-bucket/1589743612191frida.jpeg" },
-        { url: "http://localhost:4000/file-bucket/1589743618350pava.jpeg" },
-        { url: "http://localhost:4000/file-bucket/1589743622345pia.jpg" },
-        { url: "http://localhost:4000/file-bucket/1589743626930polly.jfif" },
-      ];
+   
 
     return ( 
         
-        <div>
-        
+        <div css={sliderstyle}>
+   <AwesomeSlider animation="fallAnimation">
+   <div data-src="/amina.jpg" />
+    <div data-src="/carla.jpg" />
+    <div data-src="/flotfyr.jpg" />
+    <div data-src="/pia.jpg" />
+    <div data-src="/pava.jpg" />
+    <div data-src="/frida.jpg" />
+        </AwesomeSlider>
       </div>
 
     );
