@@ -14,7 +14,8 @@ omosdata && console.log("from context:", omosdata);
   flex-direction: row;
   justify-content: space-evenly;
   padding:0.5rem;
-  margin: 2rem 20%;
+  margin: 2rem 10%;
+  font-weight:400;
 
 `;
   const articlestyle=css`

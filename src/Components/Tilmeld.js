@@ -1,3 +1,5 @@
+/**@jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
 import { dataContext } from "../Contexts/DataContext";
 import { useForm } from "react-hook-form";
 import { navigate } from "@reach/router";
@@ -31,13 +33,41 @@ const Tilmeld= () => {
 
     };
 
+    const wrap= css`
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-start;
+    
+    h2{
+        margin:1px 1px;
+        
+    }
+
+    p{
+        margin:0;
+        padding-bottom:1rem;
+        
+    }
+
+    form{
+
+        margin-left:3rem;
+
+
+    }
+    
+    `;
+
 
 
     return ( 
-<>
+<div css={wrap}>
+
+    <div>
         <h2>Tilmed dig vores nyhedsbrev</h2>
         <p>Få inspiration og nyheder ...juuhhuu bla bla</p>
-
+        </div>
         <form  onSubmit={handleSubmit(onSubmit)}>
     
     
@@ -53,7 +83,7 @@ const Tilmeld= () => {
     <input type="submit" value="Tilmeld"/>
   </form>
 
-</>
+</div>
 
      );
 }
