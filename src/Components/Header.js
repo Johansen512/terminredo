@@ -1,6 +1,5 @@
 /**@jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { dataContext } from "../Contexts/DataContext";
 import '../App.css';
 import Navigation from "../Components/Navigation";
 

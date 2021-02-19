@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import { dataContext } from "../Contexts/DataContext";
 
-import {useContext, useEffect, useState} from "react";
+import {useContext} from "react";
 
 const Hero = () => {
 

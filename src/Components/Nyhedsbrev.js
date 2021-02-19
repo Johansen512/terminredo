@@ -1,9 +1,7 @@
 /**@jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { dataContext } from "../Contexts/DataContext";
-import { useForm } from "react-hook-form";
-import { navigate } from "@reach/router";
-import {useContext, useEffect, useState} from "react";
+import {useContext} from "react";
 import Tilmeld from "../Components/Tilmeld";
 import Frameld from "../Components/Frameld";
 

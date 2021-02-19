@@ -37,7 +37,7 @@ console.log ("from local (login):", userlog );
 
 
 
-    //Login slut
+//Login slut
 
 //Nyhedsbrevs login ting
     const [logindata, setLogindata]=useState (null);

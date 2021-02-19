@@ -1,6 +1,4 @@
-/**@jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
-import { navigate } from '@reach/router';
+
 
 
 const Unsplash= () => {
