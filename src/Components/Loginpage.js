@@ -12,7 +12,7 @@ const Loginpage= () => {
 
     const loginpagestyle=css`
     display:block;
-    z-index:1000;
+  
     width:100%;
     height:6000px;
     background-color:red;

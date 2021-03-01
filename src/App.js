@@ -8,6 +8,7 @@ import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Newssplash from "./Components/Newssplash";
 import Unsplash from "./Components/Unsplash";
+import Loginpage from "./Components/Loginpage";
 import DataContextProvider from './Contexts/DataContext';
 import React from 'react';
 import { Router } from '@reach/router';
@@ -21,7 +22,8 @@ function App() {
    <>
    <Header />
    <Router>
-      <Home path="/" />
+      <Loginpage path="/" />
+      <Home path="/Home" />
       <Omos path="/Omos" />
       <Frivillig path="/Frivillig" />
       <Dyrinod path="/Dyrinod" />

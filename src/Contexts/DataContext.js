@@ -15,25 +15,30 @@ const DataContextProvider = (props) => {
 
     //Login
     const [userlog, setUserlog]=useState(null);
+    //const obj = JSON.parse(json);
 
+    //JSON.parse(window.localStorage.getItem('user'));
 //check localstorage for Login
+
+
 
 useEffect(()=>{
 
-  let storedloggedUser = localStorage.getItem('User');
+  let storedloggedUser = JSON.parse(window.localStorage.getItem('Logged'));
+setUserlog(storedloggedUser);
   
   
-  setUserlog(storedloggedUser);
+ 
   
  
   
 
-console.log ("from local (login):", userlog );
+//console.log ("from local (login):", userlog );
 
 
   
 
-}, [userlog, setUserlog]);
+}, []);
 
 
 
@@ -59,7 +64,7 @@ console.log ("from local (login):", userlog );
        
         
 
-     console.log ("from local:", checkedperson );
+    // console.log ("from local:", checkedperson );
 
 
         
@@ -97,7 +102,7 @@ console.log ("from local (login):", userlog );
           
           data && console.log(data)
 
-          console.log ("badylf")
+          //console.log ("badylf")
 
 //Hero Fetch
           useEffect (() => {
@@ -116,7 +121,7 @@ console.log ("from local (login):", userlog );
               
               herodata && console.log(herodata)
     
-              console.log ("badylf")
+             // console.log ("badylf")
 
               //Hero Fetch slut
 
@@ -138,7 +143,7 @@ console.log ("from local (login):", userlog );
                   
                  omosdata && console.log(omosdata)
         
-                  console.log ("badylf")
+                 // console.log ("badylf")
 
 
               //Alle Omos slut
@@ -163,7 +168,7 @@ console.log ("from local (login):", userlog );
                   
                   frivilligdata && console.log(frivilligdata)
         
-                  console.log ("hrrmfff")
+                  //console.log ("hrrmfff")
 
               //Alle Frivillig slut
 
@@ -186,7 +191,7 @@ console.log ("from local (login):", userlog );
                   
              dyrinoddata && console.log(dyrinoddata)
         
-                  console.log ("piiv piiv")
+                  //console.log ("piiv piiv")
 
               //Dyr i nød slut
 
@@ -209,7 +214,7 @@ console.log ("from local (login):", userlog );
                   
                   adoptdata && console.log(adoptdata)
         
-                  console.log ("en huuuund")
+                  //console.log ("en huuuund")
 
               //Adopt slut
 
@@ -234,7 +239,7 @@ console.log ("from local (login):", userlog );
                   
                   assetdata && console.log(assetdata)
         
-                  console.log ("en ass ... see what I did?")
+                  //console.log ("en ass ... see what I did?")
 
 
 

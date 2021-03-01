@@ -16,7 +16,12 @@ const Form = () => {
             password:data.password
         }
 
-        userlog === userperson ?  localStorage.setItem('Loggged', JSON.stringify(userperson)) : alert ("Du er allerede logget ind");
+       
+
+        console.log (userperson)
+        console.log (userlog)
+
+        userperson !== userlog ? alert ("Du er allerede logget ind") : localStorage.setItem('Logged', JSON.stringify(userperson));
 
     }
 
