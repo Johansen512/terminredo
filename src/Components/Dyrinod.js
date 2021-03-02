@@ -2,10 +2,18 @@
 import { css } from '@emotion/react';
 import { dataContext } from "../Contexts/DataContext";
 import {useContext} from "react";
+import { navigate } from "@reach/router";
 
 const Dyrinod = () => {
 //Data hentet fra context
 const { dyrinoddata } = useContext(dataContext);
+
+const { userlog } = useContext(dataContext);
+
+  
+  //!userlog && navigate("/"); 
+
+  userlog && console.log (userlog); 
 
 dyrinoddata && console.log("from context:", dyrinoddata);
 

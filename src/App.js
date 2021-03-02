@@ -23,13 +23,14 @@ function App() {
    <Header />
    <Router>
       <Loginpage path="/" />
-      <Home path="/Home" />
-      <Omos path="/Omos" />
-      <Frivillig path="/Frivillig" />
-      <Dyrinod path="/Dyrinod" />
-      <Adopter path="/Adopter" />
+      <Home path="Home" />
+      <Omos path="Omos" />
+      <Frivillig path="Frivillig" />
+      <Dyrinod path="Dyrinod" />
+      <Adopter path="Adopter" />
       <Newssplash path="Newssplash" />
       <Unsplash path="Unsplash" />
+      
       </Router>
       
       <Footer />

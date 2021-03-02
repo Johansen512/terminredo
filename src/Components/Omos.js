@@ -2,10 +2,16 @@
 import { css } from '@emotion/react';
 import { dataContext } from "../Contexts/DataContext";
 import {useContext} from "react";
+import { navigate } from "@reach/router";
 
 const Omos = () => {
 //Data hentet fra context
 const { omosdata } = useContext(dataContext);
+
+const { userlog } = useContext(dataContext);
+
+  
+userlog && console.log (userlog); 
 
 omosdata && console.log("from context:", omosdata);
 
