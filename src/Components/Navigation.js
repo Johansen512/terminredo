@@ -2,9 +2,17 @@
 import { css } from '@emotion/react';
 import '../App.css';
 import { Link } from "@reach/router";
+import { navigate } from "@reach/router";
+import { dataContext } from "../Contexts/DataContext";
+import {useContext} from "react";
 
 const Navigation = () => {
 
+    
+
+    const { userlog } = useContext(dataContext);
+
+    
 
     const navistyle=css`
    
@@ -35,33 +43,38 @@ const Navigation = () => {
     
     `;
     
-    /*const liststyle=css`
-        list-style: none;
-        border: black solid 4px;
-       
+  
+        
 
-
-        `;*/
-    
-    
-    
+  
+        
+     
    
     return ( 
 
-<nav css={navistyle} >
+
+        <div>
+            
+              
         
-<Link to="/" css={linkstyle}> Hjem</Link>  
+<nav css={navistyle} >
+
+
+<Link to="/Home" css={linkstyle}> Hjem</Link>  
 <Link to="/Omos" css={linkstyle}> Om os </Link> 
 <Link to="/Frivillig"css={linkstyle} > Bliv frivillig </Link> 
 <Link to="/Dyrinod" css={linkstyle}> Dyr i nød? </Link> 
 <Link to="/Adopter"css={linkstyle} > Adoptér et dyr </Link> 
 
+
+ </nav> 
+ 
+ 
+
+</div>
+
      
-
-
-
-      </nav>
-     );
+);
 }
  
 export default Navigation;

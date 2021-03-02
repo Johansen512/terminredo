@@ -3,12 +3,18 @@ import { css } from '@emotion/react';
 import { dataContext } from "../Contexts/DataContext";
 import {useContext} from "react";
 import Slider from "../Components/Slider";
+import { navigate } from "@reach/router";
 
 const Adopter = () => {
 
 //Data hentet fra context
 const { adoptdata } = useContext(dataContext);
 const { data } = useContext(dataContext);
+
+const { userlog } = useContext(dataContext);
+
+  
+userlog && console.log (userlog);  
 
 adoptdata && console.log("from context:", adoptdata);
 

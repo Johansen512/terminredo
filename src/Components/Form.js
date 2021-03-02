@@ -2,9 +2,9 @@
 import { dataContext } from "../Contexts/DataContext";
 import {useContext} from "react";
 import { useForm } from "react-hook-form";
+import { navigate } from "@reach/router";
 const Form = () => {
-
-
+    
     const { userlog } = useContext(dataContext);
     
 
@@ -21,12 +21,18 @@ const Form = () => {
         console.log (userperson)
         console.log (userlog)
 
-        userperson !== userlog ? alert ("Du er allerede logget ind") : localStorage.setItem('Logged', JSON.stringify(userperson));
-
+        //JSON.stringify(userperson) === JSON.stringify(userlog) ? alert("Du ER logget ind!") : 
+        
+        localStorage.setItem('Logged', JSON.stringify(userperson));
+        
+        navigate("/Home");
+        
     }
-
+    
 
     return ( 
+
+       
 <>
         <h1>Velkommen til Foreningen for dyrevelfærd</h1>
 

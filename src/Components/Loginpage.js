@@ -1,14 +1,19 @@
 /**@jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-
+import { navigate } from "@reach/router";
 import Form from "../Components/Form";
-
+import { dataContext } from "../Contexts/DataContext";
+import {useContext} from "react";
 
 
 //Denne side er ikke færdig
 
 
 const Loginpage= () => {
+
+    const { userlog } = useContext(dataContext);
+
+    
 
     const loginpagestyle=css`
     display:block;
@@ -21,12 +26,21 @@ const Loginpage= () => {
     
     `;
 
+userlog && navigate("/Home")
 
-    return ( 
+ return ( 
+       
+
+      
+
         <div css={loginpagestyle}>
+
+
         <Form />
         
         </div>
+
+        
 
 
     );

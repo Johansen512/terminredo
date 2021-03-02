@@ -2,12 +2,18 @@
 import { css } from '@emotion/react';
 import { dataContext } from "../Contexts/DataContext";
 import {useContext} from "react";
+import { navigate } from "@reach/router";
 
 
 const Frivillig = () => {
 
   //Data hentet fra context
 const { frivilligdata } = useContext(dataContext);
+
+const { userlog } = useContext(dataContext);
+
+  
+userlog && console.log (userlog); 
 
 frivilligdata && console.log("from context:", frivilligdata);
 
