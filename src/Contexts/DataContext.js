@@ -14,7 +14,13 @@ const DataContextProvider = (props) => {
 
 
     //Login
-    const [userlog, setUserlog]=useState(null);
+    //const [userlog, setUserlog]=useState(null);
+
+    const [username, setUsername]=useState(null);
+    const [password, setPassword]=useState(null);
+    const [token, setToken]=useState(null);
+
+
     //const obj = JSON.parse(json);
 
     //JSON.parse(window.localStorage.getItem('user'));
@@ -24,21 +30,29 @@ const DataContextProvider = (props) => {
 
 useEffect(()=>{
 
-  let storedloggedUser = JSON.parse(window.localStorage.getItem('Logged'));
-setUserlog(storedloggedUser);
-  
-  
- 
-  
- 
+
+  if(username && password) {
+    console.log (username, password)
+
+    fetch("http://localhost:4000/auth/token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `username=${username}&password=${password}`,
+    })
+    .then((response) => response.json())
+    .then ((result) => console.log(result))
+    .catch(err => console.error(err));
+
+  }
+ // let storedloggedUser = JSON.parse(window.localStorage.getItem('Logged'));
+//setUserlog(storedloggedUser);
   
 
 //console.log ("from local (login):", userlog );
 
-
-  
-
-}, []);
+}, [username, password]);
 
 
 
@@ -251,7 +265,7 @@ setUserlog(storedloggedUser);
 
     return ( 
 
-<dataContext.Provider value={{ data, setData, checkedperson, setCheckedperson, userlog, setUserlog, herodata, setHerodata, omosdata, setOmosdata, frivilligdata, setFrivilligdata, dyrinoddata, setDyrinoddata, adoptdata, setAdoptdata, assetdata, setAssetdata}}>
+<dataContext.Provider value={{ data, setData, setUsername, setPassword, token, checkedperson, setCheckedperson, herodata, setHerodata, omosdata, setOmosdata, frivilligdata, setFrivilligdata, dyrinoddata, setDyrinoddata, adoptdata, setAdoptdata, assetdata, setAssetdata}}>
 
 {props.children}
 </dataContext.Provider>

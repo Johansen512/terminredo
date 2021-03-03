@@ -1,5 +1,6 @@
 /**@jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+
 import { dataContext } from "../Contexts/DataContext";
 import {useContext} from "react";
 import { navigate } from "@reach/router";
@@ -60,6 +61,7 @@ omosdata && console.log("from context:", omosdata);
   
   
     return omosdata && ( 
+
 <section css={sectionstyle}>
 { omosdata.map (content => <article css={articlestyle}><h2>{ content.title}</h2><p>{ content.content}</p></article>)} 
 
@@ -68,7 +70,8 @@ omosdata && console.log("from context:", omosdata);
         
        
 </section>
-     );
+    )
+
 }
  
 export default Omos;

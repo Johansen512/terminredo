@@ -1,5 +1,6 @@
 /**@jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+
 import { dataContext } from "../Contexts/DataContext";
 import {useContext} from "react";
 import { navigate } from "@reach/router";
@@ -83,6 +84,8 @@ p{
 
     return dyrinoddata && ( 
 
+       
+
 <div css={wrap}>
        <div css={dyrinodtextstyle}>
         <h2>{dyrinoddata.title}</h2>
@@ -95,6 +98,7 @@ p{
        </div>
        
         </div>
+       
      );
 }
  

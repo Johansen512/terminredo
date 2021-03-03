@@ -60,11 +60,12 @@ const Navigation = () => {
 <nav css={navistyle} >
 
 
-<Link to="/Home" css={linkstyle}> Hjem</Link>  
+<Link to="/" css={linkstyle}> Hjem</Link>  
 <Link to="/Omos" css={linkstyle}> Om os </Link> 
 <Link to="/Frivillig"css={linkstyle} > Bliv frivillig </Link> 
 <Link to="/Dyrinod" css={linkstyle}> Dyr i nød? </Link> 
 <Link to="/Adopter"css={linkstyle} > Adoptér et dyr </Link> 
+<Link to="/Admin"css={linkstyle} > Admin </Link> 
 
 
  </nav> 

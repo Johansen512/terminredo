@@ -12,6 +12,7 @@ import Loginpage from "./Components/Loginpage";
 import DataContextProvider from './Contexts/DataContext';
 import React from 'react';
 import { Router } from '@reach/router';
+import Admin from './Components/Admin';
 
 function App() {
   
@@ -22,15 +23,16 @@ function App() {
    <>
    <Header />
    <Router>
-      <Loginpage path="/" />
-      <Home path="Home" />
+      <Loginpage path="Loginpage" />
+      <Home path="/" />
       <Omos path="Omos" />
       <Frivillig path="Frivillig" />
       <Dyrinod path="Dyrinod" />
       <Adopter path="Adopter" />
       <Newssplash path="Newssplash" />
       <Unsplash path="Unsplash" />
-      
+      <Admin path="Admin" />
+       
       </Router>
       
       <Footer />

@@ -142,6 +142,8 @@ color:white;
 adoptdata && console.log (adoptdata.length)
     return adoptdata  && ( 
 
+      
+
       <div css={adoptblock}>
 <section css={headsectionstyle}>
    {data && <h2 css={textstyle}>{data[2].title}</h2>}
@@ -179,8 +181,6 @@ adoptdata && console.log (adoptdata.length)
   <Slider />
 
 </div>
-
-
 
      );
 }
