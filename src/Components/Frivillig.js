@@ -1,5 +1,6 @@
 /**@jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+
 import { dataContext } from "../Contexts/DataContext";
 import {useContext} from "react";
 import { navigate } from "@reach/router";
@@ -95,6 +96,8 @@ margin: 2rem 10%;
 
 
     return frivilligdata && ( 
+
+     
 <div css={frivilligstyle}>
         
 <h2 css={h2style}>Bliv frivillig</h2>
@@ -110,6 +113,7 @@ margin: 2rem 10%;
         
         
         </div>
+      
      );
 }
  
