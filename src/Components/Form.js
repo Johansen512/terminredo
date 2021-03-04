@@ -3,6 +3,9 @@ import { dataContext } from "../Contexts/DataContext";
 import {useContext} from "react";
 import { useForm } from "react-hook-form";
 import { navigate, Redirect, redirectTo } from "@reach/router";
+import { toast } from "react-toastify";
+import Mytoast from "./Mytoast";
+
 const Form = () => {
     
     const { setUsername, setPassword, token } = useContext(dataContext);
@@ -14,6 +17,7 @@ const Form = () => {
         //data.preventDefault()
 
         console.log (data)
+        toast.dark("logger ind ...")
         setUsername(data.username)
         setPassword(data.password)
 

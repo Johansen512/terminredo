@@ -41,6 +41,7 @@ const dyrinodstyle=css`
     height:200px;
     width: 100%;
     overflow:hidden;
+    object-fit:cover;
 
 
     
@@ -59,6 +60,7 @@ position: relative;
 left: 300px;
 z-index:10;
 color:white;
+
 
 
 @media (max-width: 420px) {

@@ -116,6 +116,8 @@ top:1610px;
 width: 100%;
 overflow:hidden;
 margin:1rem 0;
+object-fit:cover;
+
 `;
 
 
