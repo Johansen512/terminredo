@@ -13,6 +13,8 @@ import DataContextProvider from './Contexts/DataContext';
 import React from 'react';
 import { Router } from '@reach/router';
 import Admin from './Components/Admin';
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   
@@ -34,7 +36,16 @@ function App() {
       <Admin path="Admin" />
        
       </Router>
-      
+      <ToastContainer 
+      position="top-left"
+      autoClose={1000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover />
       <Footer />
     </>
         

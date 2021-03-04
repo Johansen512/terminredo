@@ -3,6 +3,8 @@ import { css } from '@emotion/react';
 import {useContext, useEffect} from "react";
 import { dataContext } from "../Contexts/DataContext";
 import {navigate } from "@reach/router";
+import { toast } from "react-toastify";
+import Mytoast from "./Mytoast";
 
 
 const Admin = () => {
@@ -16,12 +18,12 @@ const Admin = () => {
     }, [token]);
 
     const handlelogout = () => {
-    
+    toast.dark(Mytoast, {autoClose: 2500})
     setTimeout(() =>{
         logout();
          navigate("/")
 
-    }, 500 )}
+    }, 1000 )}
 
     return (  
         <>
