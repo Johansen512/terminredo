@@ -2,7 +2,7 @@
 import { dataContext } from "../Contexts/DataContext";
 import {useContext} from "react";
 import { useForm } from "react-hook-form";
-import { navigate } from "@reach/router";
+import { navigate, Redirect, redirectTo } from "@reach/router";
 const Form = () => {
     
     const { setUsername, setPassword, token } = useContext(dataContext);
@@ -36,7 +36,7 @@ const Form = () => {
     }
     
 
-    return ( 
+    return !token ? ( 
 
        
 <>
@@ -58,7 +58,7 @@ const Form = () => {
       </form>
       </>
 
-     );
+     ) : (<Redirect to="/Admin" noThrow />);
 }
  
 export default Form;

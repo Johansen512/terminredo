@@ -18,7 +18,7 @@ const DataContextProvider = (props) => {
 
     const [username, setUsername]=useState(null);
     const [password, setPassword]=useState(null);
-    const [token, setToken]=useState(null);
+    const [token, setToken]=useState(sessionStorage.getItem("token"));
 
 
     //const obj = JSON.parse(json);
@@ -42,7 +42,9 @@ useEffect(()=>{
       body: `username=${username}&password=${password}`,
     })
     .then((response) => response.json())
-    .then ((result) => console.log(result))
+    .then ((result) => {
+    sessionStorage.setItem("token", result.token)
+    setToken(result.token)})
     .catch(err => console.error(err));
 
   }
@@ -57,6 +59,15 @@ useEffect(()=>{
 
 
 //Login slut
+
+//Logud begynder
+
+const logout = () => {
+sessionStorage.removeItem ("token")
+
+
+
+}
 
 //Nyhedsbrevs login ting
     const [logindata, setLogindata]=useState (null);
@@ -265,7 +276,7 @@ useEffect(()=>{
 
     return ( 
 
-<dataContext.Provider value={{ data, setData, setUsername, setPassword, token, checkedperson, setCheckedperson, herodata, setHerodata, omosdata, setOmosdata, frivilligdata, setFrivilligdata, dyrinoddata, setDyrinoddata, adoptdata, setAdoptdata, assetdata, setAssetdata}}>
+<dataContext.Provider value={{ data, setData, setUsername, setPassword, token, logout, checkedperson, setCheckedperson, herodata, setHerodata, omosdata, setOmosdata, frivilligdata, setFrivilligdata, dyrinoddata, setDyrinoddata, adoptdata, setAdoptdata, assetdata, setAssetdata}}>
 
 {props.children}
 </dataContext.Provider>
