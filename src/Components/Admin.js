@@ -2,10 +2,12 @@
 import { css } from '@emotion/react';
 import {useContext, useEffect} from "react";
 import { dataContext } from "../Contexts/DataContext";
-import {navigate } from "@reach/router";
+import {navigate, Router } from "@reach/router";
 import { toast } from "react-toastify";
 import Mytoast from "./Mytoast";
 import Form from "./Form";
+import Adminhome from "./Adminhome";
+import Adminanimals from "./Adminanimals";
 
 
 const Admin = () => {
@@ -30,7 +32,15 @@ const Admin = () => {
         <>
        <h1> Velkommen til Admin-siden</h1>
        <button onClick={handlelogout}>Log ud</button>
-       </>
+       
+<Router >
+
+<Adminhome path="/"/>
+<Adminanimals path="animals" />
+
+</Router>
+</> 
+
     ) :
     
    ( <Form />);

@@ -33,7 +33,7 @@ function App() {
       <Adopter path="Adopter" />
       <Newssplash path="Newssplash" />
       <Unsplash path="Unsplash" />
-      <Admin path="Admin" />
+      <Admin path="Admin/*" />
        
       </Router>
       <ToastContainer 
