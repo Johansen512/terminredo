@@ -44,6 +44,7 @@ const login = (username, password) =>{
     .then ((result) => {
     sessionStorage.setItem("token", result.token)
     setToken(result.token)})
+    
     .catch(err => console.error(err));
 
   //}
