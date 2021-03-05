@@ -16,8 +16,7 @@ const DataContextProvider = (props) => {
     //Login
     //const [userlog, setUserlog]=useState(null);
 
-    const [username, setUsername]=useState(null);
-    const [password, setPassword]=useState(null);
+    
     const [token, setToken]=useState(sessionStorage.getItem("token"));
 
 
@@ -28,10 +27,10 @@ const DataContextProvider = (props) => {
 
 
 
-useEffect(()=>{
+const login = (username, password) =>{
 
 
-  if(username && password) {
+  /*if(username && password) {*/
     console.log (username, password)
 
     fetch("http://localhost:4000/auth/token", {
@@ -47,14 +46,14 @@ useEffect(()=>{
     setToken(result.token)})
     .catch(err => console.error(err));
 
-  }
+  //}
  // let storedloggedUser = JSON.parse(window.localStorage.getItem('Logged'));
 //setUserlog(storedloggedUser);
   
 
 //console.log ("from local (login):", userlog );
 
-}, [username, password]);
+};
 
 
 
@@ -63,6 +62,7 @@ useEffect(()=>{
 //Logud begynder
 
 const logout = () => {
+  setToken(null)
 sessionStorage.removeItem ("token")
 
 
@@ -276,7 +276,7 @@ sessionStorage.removeItem ("token")
 
     return ( 
 
-<dataContext.Provider value={{ data, setData, setUsername, setPassword, token, logout, checkedperson, setCheckedperson, herodata, setHerodata, omosdata, setOmosdata, frivilligdata, setFrivilligdata, dyrinoddata, setDyrinoddata, adoptdata, setAdoptdata, assetdata, setAssetdata}}>
+<dataContext.Provider value={{ data, setData, login, token, logout, checkedperson, setCheckedperson, herodata, setHerodata, omosdata, setOmosdata, frivilligdata, setFrivilligdata, dyrinoddata, setDyrinoddata, adoptdata, setAdoptdata, assetdata, setAssetdata}}>
 
 {props.children}
 </dataContext.Provider>

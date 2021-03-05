@@ -8,7 +8,7 @@ import Mytoast from "./Mytoast";
 
 const Form = () => {
     
-    const { setUsername, setPassword, token } = useContext(dataContext);
+    const { login } = useContext(dataContext);
     
 
     const { register, handleSubmit, errors } = useForm();
@@ -18,8 +18,9 @@ const Form = () => {
 
         console.log (data)
         toast.dark("logger ind ...")
-        setUsername(data.username)
-        setPassword(data.password)
+        let username = data.username;
+        let password = data.password;
+        login (username, password);
 
         /*const userperson= {
             name:data.name,
@@ -40,7 +41,7 @@ const Form = () => {
     }
     
 
-    return !token ? ( 
+    return  ( 
 
        
 <>
@@ -62,7 +63,7 @@ const Form = () => {
       </form>
       </>
 
-     ) : (<Redirect to="/Admin" noThrow />);
+     ) ;
 }
  
 export default Form;

@@ -25,7 +25,7 @@ function App() {
    <>
    <Header />
    <Router>
-      <Loginpage path="Loginpage" />
+      
       <Home path="/" />
       <Omos path="Omos" />
       <Frivillig path="Frivillig" />
