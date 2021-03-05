@@ -5,17 +5,18 @@ import { dataContext } from "../Contexts/DataContext";
 import {navigate } from "@reach/router";
 import { toast } from "react-toastify";
 import Mytoast from "./Mytoast";
+import Form from "./Form";
 
 
 const Admin = () => {
 
     const {token, logout} = useContext(dataContext);
 
-    useEffect(() => {
+    /*useEffect(() => {
         if (!token) { navigate ("/Loginpage")}
 
 
-    }, [token]);
+    }, [token]);*/
 
     const handlelogout = () => {
     toast.dark(Mytoast, {autoClose: 2500})
@@ -25,12 +26,14 @@ const Admin = () => {
 
     }, 1000 )}
 
-    return (  
+    return token ? (  
         <>
        <h1> Velkommen til Admin-siden</h1>
        <button onClick={handlelogout}>Log ud</button>
        </>
-    );
+    ) :
+    
+   ( <Form />);
 }
  
 export default Admin;
