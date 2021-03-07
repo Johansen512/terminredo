@@ -8,6 +8,7 @@ import Mytoast from "./Mytoast";
 import Form from "./Form";
 import Adminhome from "./Adminhome";
 import Adminanimals from "./Adminanimals";
+import Admineditanimal from './Admineditanimal';
 
 
 const Admin = () => {
@@ -37,6 +38,7 @@ const Admin = () => {
 
 <Adminhome path="/"/>
 <Adminanimals path="animals" />
+<Admineditanimal path="animals/edit/:id"/>
 
 </Router>
 </> 

@@ -65,7 +65,7 @@ const Navigation = () => {
 <Link to="/Frivillig"css={linkstyle} > Bliv frivillig </Link> 
 <Link to="/Dyrinod" css={linkstyle}> Dyr i nød? </Link> 
 <Link to="/Adopter"css={linkstyle} > Adoptér et dyr </Link> 
-<Link to="/Admin"css={linkstyle} > Admin </Link> 
+<Link to="/admin"css={linkstyle} > Admin </Link> 
 
 
  </nav> 

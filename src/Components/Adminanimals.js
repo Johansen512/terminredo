@@ -20,7 +20,9 @@ const Adminanimals = () => {
         <h1>Vælg et dyr at redigere</h1>
 
         <ul>
-{animals?.map(animal => (<li key={animal.id}>{animal.name}<Link to={`/animals/edit/${animal.id}`}>Rediger</Link></li>))}
+{animals?.map(animal => (<li key={animal.id}>{animal.name}{" "}
+
+<Link to={`edit/${animal.id}`}>Rediger</Link></li>))}
         </ul>
     </div>  );
 }
