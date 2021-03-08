@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import { toast } from "react-toastify";
-import Testicon from "../Components/Testicon";
+//import Testicon from "../Components/Testicon";
 export const dataContext = createContext();
 
 
@@ -24,13 +24,13 @@ const DataContextProvider = (props) => {
 const myToastId = "myToastId";
 
 const notify = () => {
-  if(toast.isActive(myToastId)){
+  if (toast.isActive(myToastId)) {
     toast.update (myToastId, {
       render: "Logger ind ...",
       type: toast.TYPE.INFO,
      
 
-    })
+    });
   } else {
     
 
@@ -40,12 +40,12 @@ const notify = () => {
       
       
      
-    })
-    toast(<Testicon />)
+    });
+   // toast(<Testicon />)
 
   }
   
-}
+};
     //const obj = JSON.parse(json);
 
     //JSON.parse(window.localStorage.getItem('user'));
@@ -73,16 +73,12 @@ const login = (username, password) =>{
       setToken(result.token)})
     
     .catch((err) => {
-      
       console.error(err);
       toast.update(myToastId, {
         render: "Wrong credentials ... try again",
         type: toast.TYPE.ERROR,
-        
-        
 
-
-      })
+      });
     
     
     
