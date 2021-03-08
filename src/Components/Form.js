@@ -17,7 +17,7 @@ const Form = () => {
         //data.preventDefault()
 
         console.log (data)
-        toast.dark("logger ind ...")
+       // toast.dark("logger ind ...")
         let username = data.username;
         let password = data.password;
         login (username, password);
