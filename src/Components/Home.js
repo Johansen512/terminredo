@@ -5,7 +5,7 @@ import Frivillig from "../Components/Frivillig";
 import Dyrinod from "../Components/Dyrinod";
 import Nyhedsbrev from "../Components/Nyhedsbrev";
 import Adopter from "../Components/Adopter";
-import Testicon from "../Components/Testicon";
+
 import { navigate } from "@reach/router";
 import { dataContext } from "../Contexts/DataContext";
 import {useContext, useEffect} from "react";
@@ -34,7 +34,7 @@ const Home = () => {
         
         <Adopter  />
 
-        <Testicon />
+        
         </div>
         
        

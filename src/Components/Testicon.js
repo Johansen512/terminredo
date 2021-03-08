@@ -17,7 +17,7 @@ const Testicon = ({ closeToast, toastProps }) => {
 <div>
 <img css={iconStyle} src="testicon.gif" alt="spin" />
 
-<ToastContainer />
+
 </div>
 
 
