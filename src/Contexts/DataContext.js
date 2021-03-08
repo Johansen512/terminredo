@@ -1,4 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
+import { toast } from "react-toastify";
+import Testicon from "../Components/Testicon";
 export const dataContext = createContext();
 
 
@@ -19,7 +21,31 @@ const DataContextProvider = (props) => {
     
     const [token, setToken]=useState(sessionStorage.getItem("token"));
 
+const myToastId = "myToastId";
 
+const notify = () => {
+  if(toast.isActive(myToastId)){
+    toast.update (myToastId, {
+      render: "Logger ind ...",
+      type: toast.TYPE.INFO,
+     
+
+    })
+  } else {
+    
+
+    toast.info("Logger lige ind", {
+      toastId: "myToastId",
+      autoClose: false,
+      
+      
+     
+    })
+    toast(<Testicon />)
+
+  }
+  
+}
     //const obj = JSON.parse(json);
 
     //JSON.parse(window.localStorage.getItem('user'));
@@ -32,7 +58,7 @@ const login = (username, password) =>{
 
   /*if(username && password) {*/
     console.log (username, password)
-
+    notify ();
     fetch("http://localhost:4000/auth/token", {
       method: "POST",
       headers: {
@@ -42,10 +68,25 @@ const login = (username, password) =>{
     })
     .then((response) => response.json())
     .then ((result) => {
-    sessionStorage.setItem("token", result.token)
-    setToken(result.token)})
+      toast.dismiss();
+      sessionStorage.setItem("token", result.token)
+      setToken(result.token)})
     
-    .catch(err => console.error(err));
+    .catch((err) => {
+      
+      console.error(err);
+      toast.update(myToastId, {
+        render: "Wrong credentials ... try again",
+        type: toast.TYPE.ERROR,
+        
+        
+
+
+      })
+    
+    
+    
+    });
 
   //}
  // let storedloggedUser = JSON.parse(window.localStorage.getItem('Logged'));
