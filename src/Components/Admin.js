@@ -9,6 +9,7 @@ import Form from "./Form";
 import Adminhome from "./Adminhome";
 import Adminanimals from "./Adminanimals";
 import Admineditanimal from './Admineditanimal';
+import Admincreateanimal from './Admincreateanimal';
 
 
 const Admin = () => {
@@ -39,6 +40,7 @@ const Admin = () => {
 <Adminhome path="/"/>
 <Adminanimals path="animals" />
 <Admineditanimal path="animals/edit/:id"/>
+<Admincreateanimal path="animals/create" />
 
 </Router>
 </> 
