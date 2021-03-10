@@ -10,7 +10,7 @@ import Adminhome from "./Adminhome";
 import Adminanimals from "./Adminanimals";
 import Admineditanimal from './Admineditanimal';
 import Admincreateanimal from './Admincreateanimal';
-
+import {Link } from "@reach/router";
 
 const Admin = () => {
 
@@ -43,6 +43,8 @@ const Admin = () => {
 <Admincreateanimal path="animals/create" />
 
 </Router>
+
+<Link to="animals">Redigér et dyr</Link> 
 </> 
 
     ) :

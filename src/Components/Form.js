@@ -53,7 +53,7 @@ const Form = () => {
       
      
      
-        <input type='name' name="username" id="username" ref={register({ required: true })} />
+        <input type='name' name="username" id="username" label="navn" ref={register({ required: true })} />
         <input type='password'  name="password" id="password" ref={register({ required: true })} />
       
         

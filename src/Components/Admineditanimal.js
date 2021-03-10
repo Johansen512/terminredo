@@ -5,11 +5,12 @@ import { dataContext } from "../Contexts/DataContext";
 const Admineditanimal = ({id}) => {
 
 
-    const [name, setName] = useState('');
-    const [description, setDescription] = useState('');
-    const [age, setAge] = useState('');
-    const [assetId, setAssetId] = useState('');
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
+    const [age, setAge] = useState("");
+    const [assetId, setAssetId] = useState("");
     const {token } = useContext(dataContext);
+    const [imgUrl, setImgUrl] = useState ("");
 
     useEffect(() => {
 
@@ -22,13 +23,20 @@ const Admineditanimal = ({id}) => {
     setDescription(result.description);
     setAge(result.age);
     setAssetId(result.assetId);
+    setImgUrl(result.asset.url);
 })
 
 .catch(err => console.error(err));
         
     }, []);
 
+useEffect(() => {
+    fetch(`http://localhost:4000/api/v1/assets/${assetId}`)
+      .then(response => response.json())
+      .then (result => setImgUrl(result.url))
+      .catch(err => console.error(err))
 
+}, [assetId])
 
     const handleUpdate = (e) => {
 
@@ -65,7 +73,7 @@ const Admineditanimal = ({id}) => {
 <textarea name="description" id="description" value={description} onChange={(e)=> setDescription(e.target.value)} ></textarea>
 <input type="number" name="age" id="age" value={age} onChange={(e) => setAge(e.target.value)}/>
 <input type="number" name="assetId" id="assetId" value={assetId} onChange={(e) => setAssetId(e.target.value)}/>
-
+<img src={imgUrl} alt={name}/>
 <button type="submit" >Opdatér</button>
 
     </form>
