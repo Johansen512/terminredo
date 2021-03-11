@@ -2,15 +2,20 @@ import { navigate } from "@reach/router";
 import {useContext, useEffect, useState} from "react";
 import { toast } from "react-toastify";
 import { dataContext } from "../Contexts/DataContext";
+import { useForm } from "react-hook-form";
+import queryString from "query-string";
+
 const Admineditanimal = ({id}) => {
 
 
-    const [name, setName] = useState("");
+    /*const [name, setName] = useState("");
     const [description, setDescription] = useState("");
-    const [age, setAge] = useState("");
+    const [age, setAge] = useState("");*/
     const [assetId, setAssetId] = useState("");
     const {token } = useContext(dataContext);
     const [imgUrl, setImgUrl] = useState ("");
+    const { register, errors, handleSubmit} = useForm();
+    const [animal, setAnimal] = useState();
 
     useEffect(() => {
 
@@ -18,11 +23,11 @@ const Admineditanimal = ({id}) => {
 .then(response => response.json())
 .then ((result) => {
     
-    
-    setName(result.name);
+    setAnimal(result);
+    /*setName(result.name);
     setDescription(result.description);
     setAge(result.age);
-    setAssetId(result.assetId);
+    setAssetId(result.assetId);*/
     setImgUrl(result.asset.url);
 })
 
@@ -38,16 +43,18 @@ useEffect(() => {
 
 }, [assetId])
 
-    const handleUpdate = (e) => {
+    const onSubmit = (animal) => {
 
-        e.preventDefault ();
+        
         fetch(`http://localhost:4000/api/v1/animals/${id}`, {
   "method": "PUT",
   "headers": {
     "Content-Type": "application/x-www-form-urlencoded",
     "Authorization": `Bearer ${ token }`,
   },
-  "body": `name=${name}&description=${description}&age${age}&assetId=${assetId}`
+  "body": queryString.stringify(animal)
+  
+  /*`name=${name}&description=${description}&age${age}&assetId=${assetId}`*/
 })
 .then(response => {
     toast ("gemmer dyret ...");
@@ -68,12 +75,41 @@ useEffect(() => {
 
 <div>
     <h2>Redigér dyret med id {id} </h2>
-    <form onSubmit={handleUpdate}>
-<input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)}/>
-<textarea name="description" id="description" value={description} onChange={(e)=> setDescription(e.target.value)} ></textarea>
-<input type="number" name="age" id="age" value={age} onChange={(e) => setAge(e.target.value)}/>
-<input type="number" name="assetId" id="assetId" value={assetId} onChange={(e) => setAssetId(e.target.value)}/>
-<img src={imgUrl} alt={name}/>
+    <form onSubmit={handleSubmit(onSubmit)}>
+<input
+type="text" 
+name="name" 
+id="name" 
+defaultValue={animal?.name} 
+ref={register}
+/>
+
+<textarea 
+name="description" 
+id="description" 
+defaultValue={animal?.description} 
+ref={register}
+ ></textarea>
+
+<input 
+
+type="number" 
+name="age" 
+id="age" 
+defaultValue={animal?.age} 
+ref={register}
+/>
+
+<input 
+type="number" 
+name="assetId" 
+id="assetId" 
+defaultValue={animal?.assetId} 
+ref={register}
+/>
+
+{/*<img src={imgUrl} alt={animal.name}/>*/}
+
 <button type="submit" >Opdatér</button>
 
     </form>

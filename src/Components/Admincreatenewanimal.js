@@ -9,16 +9,16 @@ import queryString from "query-string";
 const Admincreatenewanimal = ({id}) => {
 
 
-    const [name, setName] = useState("");
+    /*const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [age, setAge] = useState("");
-    const [assetId, setAssetId] = useState("");
+    const [assetId, setAssetId] = useState("");*/
     const {token } = useContext(dataContext);
     const { register, errors, handleSubmit} = useForm();
 
     
         const onSubmit= (data) => { 
-
+console.log (data)
         console.log (queryString.stringify(data));
         fetch(`http://localhost:4000/api/v1/animals/`, {
   "method": "POST",
@@ -69,6 +69,22 @@ const Admincreatenewanimal = ({id}) => {
 
 
     }*/
+
+    const nameConfig = {
+        required : {value: true, message: "Du mangler at indtaste navn"},
+        minLength: { value: 2, message: "Navnet er for kort ... FOR KORT!!1"}
+}
+
+    const descriptionConfig = {
+        required : {value: true, message: "Du mangler at indtaste noget"},
+        maxLength: { value: 80, message: "Du har opbrugt dine tegn"}
+
+
+    }
+
+   
+
+
     return ( 
 
 <div>
@@ -76,18 +92,44 @@ const Admincreatenewanimal = ({id}) => {
     <form onSubmit={handleSubmit(onSubmit)}>
 
             <label htmlFor="name">Navn:</label>
-        <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} ref={register({ required: true })}/>
-        {errors.name && "Du mangler at indtaste navn"}
+        <input 
+        type="text" 
+        name="name" 
+        id="name" 
+      // defaultValue={animal?.name}
+        
+        ref={register( nameConfig )}/>
+        {errors.name?.message}
+        
         <label htmlFor="description">Beskrivelse:</label>
-        <textarea name="description" id="description" value={description} onChange={(e)=> setDescription(e.target.value)} ref={register ({ required: true })}></textarea>
-        {errors.description && "Du mangler at indtaste beskrivelse"}
+        <textarea 
+        name="description" 
+        id="description" 
+       
+        
+        ref={register (descriptionConfig)}></textarea>
+        {errors.description?.message}
+        
         <label htmlFor="age">Antal dage:</label>
-        <input type="number" name="age" id="age" value={age} onChange={(e) => setAge(e.target.value)} ref={register ({ required: true })}/>
+        <input type="number" 
+        name="age" 
+        id="age" 
+      
+        
+        ref={register ({ required: true })}/>
         {errors.age && "Du mangler at indtaste antal dage"}
+        
         <label htmlFor="assetId">Billed-id:</label>
-        <input type="number" name="assetId" id="assetId" value={assetId} onChange={(e) => setAssetId(e.target.value)} ref={register ({ required: true })}/>
+        <input 
+        type="number" 
+        name="assetId" 
+        id="assetId" 
+        
+        /*onChange={(e) => setAssetId(e.target.value)} */
+        ref={register ({ required: true })}/>
         {errors.assetId && "Du mangler at indtaste id"}
-    <button type="submit" >Opret!</button>
+    
+        <button type="submit" >Opret!</button>
 
     </form>
 </div>
