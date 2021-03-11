@@ -13,16 +13,34 @@ const Admincreatenewanimal = ({id}) => {
     const [age, setAge] = useState("");
     const [assetId, setAssetId] = useState("");
     const {token } = useContext(dataContext);
-    const { register, handleSubmit} = useForm;
+    const { register, handleSubmit} = useForm();
 
     
-const onSubmit= (data) => { 
+        const onSubmit= (data) => { 
 
-    console.log (data)
-} 
+        console.log (data);
+        fetch(`http://localhost:4000/api/v1/animals/`, {
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Authorization": `Bearer ${ token }`,
+  },
+  "body": `name=${name}&description=${description}&age${age}&assetId=${assetId}`
+})
+.then(response => {
+    toast ("gemmer dyret ...");
+    setTimeout (() => {
+        navigate ("/admin/animals")
+    }, 2500);
+    
+})
+.catch(err => console.error(err));
 
 
-    const handleCreate = (e) => {
+    };
+
+
+    /*const handleCreate = (e) => {
 
         e.preventDefault ();
         console.log (`name=${name}&description=${description}&age${age}&assetId=${assetId}`)
@@ -48,25 +66,25 @@ const onSubmit= (data) => {
 
 
 
-    }
+    }*/
     return ( 
 
 <div>
     <h2>Opret et nyt dyr </h2>
-    (<form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
 
             <label htmlFor="name">Navn:</label>
-        <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)}/>
+        <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} ref={register}/>
         <label htmlFor="description">Beskrivelse:</label>
-        <textarea name="description" id="description" value={description} onChange={(e)=> setDescription(e.target.value)} ></textarea>
+        <textarea name="description" id="description" value={description} onChange={(e)=> setDescription(e.target.value)} ref={register}></textarea>
         <label htmlFor="age">Antal dage:</label>
-        <input type="number" name="age" id="age" value={age} onChange={(e) => setAge(e.target.value)}/>
+        <input type="number" name="age" id="age" value={age} onChange={(e) => setAge(e.target.value)} ref={register}/>
         <label htmlFor="assetId">Billed-id:</label>
-        <input type="number" name="assetId" id="assetId" value={assetId} onChange={(e) => setAssetId(e.target.value)}/>
+        <input type="number" name="assetId" id="assetId" value={assetId} onChange={(e) => setAssetId(e.target.value)} ref={register}/>
 
     <button type="submit" >Opret!</button>
 
-    </form>)
+    </form>
 </div>
 
 
