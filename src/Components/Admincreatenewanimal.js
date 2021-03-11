@@ -3,6 +3,7 @@ import {useContext, useEffect, useState} from "react";
 import { toast } from "react-toastify";
 import { dataContext } from "../Contexts/DataContext";
 import { useForm } from "react-hook-form";
+import queryString from "query-string";
 
 
 const Admincreatenewanimal = ({id}) => {
@@ -13,19 +14,20 @@ const Admincreatenewanimal = ({id}) => {
     const [age, setAge] = useState("");
     const [assetId, setAssetId] = useState("");
     const {token } = useContext(dataContext);
-    const { register, handleSubmit} = useForm();
+    const { register, errors, handleSubmit} = useForm();
 
     
         const onSubmit= (data) => { 
 
-        console.log (data);
+        console.log (queryString.stringify(data));
         fetch(`http://localhost:4000/api/v1/animals/`, {
   "method": "POST",
   "headers": {
     "Content-Type": "application/x-www-form-urlencoded",
     "Authorization": `Bearer ${ token }`,
   },
-  "body": `name=${name}&description=${description}&age${age}&assetId=${assetId}`
+  "body": queryString.stringify(data) 
+  /*`name=${name}&description=${description}&age${age}&assetId=${assetId}`*/
 })
 .then(response => {
     toast ("gemmer dyret ...");
@@ -74,14 +76,17 @@ const Admincreatenewanimal = ({id}) => {
     <form onSubmit={handleSubmit(onSubmit)}>
 
             <label htmlFor="name">Navn:</label>
-        <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} ref={register}/>
+        <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} ref={register({ required: true })}/>
+        {errors.name && "Du mangler at indtaste navn"}
         <label htmlFor="description">Beskrivelse:</label>
-        <textarea name="description" id="description" value={description} onChange={(e)=> setDescription(e.target.value)} ref={register}></textarea>
+        <textarea name="description" id="description" value={description} onChange={(e)=> setDescription(e.target.value)} ref={register ({ required: true })}></textarea>
+        {errors.description && "Du mangler at indtaste beskrivelse"}
         <label htmlFor="age">Antal dage:</label>
-        <input type="number" name="age" id="age" value={age} onChange={(e) => setAge(e.target.value)} ref={register}/>
+        <input type="number" name="age" id="age" value={age} onChange={(e) => setAge(e.target.value)} ref={register ({ required: true })}/>
+        {errors.age && "Du mangler at indtaste antal dage"}
         <label htmlFor="assetId">Billed-id:</label>
-        <input type="number" name="assetId" id="assetId" value={assetId} onChange={(e) => setAssetId(e.target.value)} ref={register}/>
-
+        <input type="number" name="assetId" id="assetId" value={assetId} onChange={(e) => setAssetId(e.target.value)} ref={register ({ required: true })}/>
+        {errors.assetId && "Du mangler at indtaste id"}
     <button type="submit" >Opret!</button>
 
     </form>
