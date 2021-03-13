@@ -55,7 +55,7 @@ const Adminanimals = () => {
 </li>))}
         </ul>
 
-        <Link to="create">Opret et nyt dyr</Link> 
+        <Link to="Admincreatenewanimal">Opret et nyt dyr</Link> 
     </div>  );
 }
  

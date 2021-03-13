@@ -5,6 +5,7 @@ import { dataContext } from "../Contexts/DataContext";
 import { useForm } from "react-hook-form";
 import queryString from "query-string";
 
+
 const Admineditanimal = ({id}) => {
 
 
@@ -75,7 +76,9 @@ useEffect(() => {
 
 <div>
     <h2>Redigér dyret med id {id} </h2>
-    <form onSubmit={handleSubmit(onSubmit)}>
+
+    
+<form onSubmit={handleSubmit(onSubmit)}>
 <input
 type="text" 
 name="name" 
