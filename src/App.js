@@ -9,6 +9,7 @@ import Header from "./Components/Header";
 import Newssplash from "./Components/Newssplash";
 import Unsplash from "./Components/Unsplash";
 import Loginpage from "./Components/Loginpage";
+import Andenside from "./Components/Andenside"
 import DataContextProvider from './Contexts/DataContext';
 import React from 'react';
 import { Router } from '@reach/router';
@@ -28,6 +29,7 @@ function App() {
       
       <Home path="/" />
       <Omos path="Omos" />
+      <Andenside path="Andenside" />
       <Frivillig path="Frivillig" />
       <Dyrinod path="Dyrinod" />
       <Adopter path="Adopter" />
