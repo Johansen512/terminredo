@@ -11,6 +11,7 @@ import Adminanimals from "./Adminanimals";
 import Admineditanimal from './Admineditanimal';
 
 import {Link } from "@reach/router";
+import Admincreatenewanimal from './Admincreatenewanimal';
 
 const Admin = () => {
 
@@ -40,6 +41,7 @@ const Admin = () => {
 <Adminhome path="/"/>
 <Adminanimals path="animals" />
 <Admineditanimal path="animals/edit/:id"/>
+<Admincreatenewanimal path="animals/creatnewanimal" />
 
 
 </Router>

@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import queryString from "query-string";
 
 
+
 const Admincreatenewanimal = ({id}) => {
 
 
@@ -89,6 +90,9 @@ console.log (data)
 
 <div>
     <h2>Opret et nyt dyr </h2>
+
+   
+
     <form onSubmit={handleSubmit(onSubmit)}>
 
             <label htmlFor="name">Navn:</label>
@@ -132,10 +136,10 @@ console.log (data)
         <button type="submit" >Opret!</button>
 
     </form>
-</div>
 
 
-     );
+
+     </div>)
 }
  
 export default Admincreatenewanimal;
